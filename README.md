@@ -10,8 +10,7 @@ API para acompanhamento de pedidos e valores recebidos.
 
 ## Instalação
 ```sh
-git clone https://github.com/seu-usuario/az_proof_frontend
-.git
+https://github.com/RobsonPMartins/az_proof_frontend.git
 ```
 ## Entrar na pasta
 ```
