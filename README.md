@@ -1,35 +1,23 @@
-# az_suite_proof
+# AZ Suite Proof
 
-This template should help get you started developing with Vue 3 in Vite.
+API para acompanhamento de pedidos e valores recebidos.
 
-## Recommended IDE Setup
+## Tecnologias
+- Node.js
+- Express
+- MongoDB
+- Mongoose
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
+## Instalação
 ```sh
+git clone https://github.com/seu-usuario/az_proof_frontend
+.git
+```
+## Entrar na pasta
+```
+cd order-tracking-api
+```
+## Intale as dependências
+```
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
