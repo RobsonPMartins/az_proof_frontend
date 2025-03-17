@@ -6,7 +6,10 @@
 
 :root {
     /* Cores Personalizadas */
-    --primary-color: #FE7C6E;   
+    --primary-color: #FE7C6E;
+    --secondary-color: #F4C8E1;
+    --tertinary-color: #B6EEDD;
+    --quaternay-color: #C3E7F3;   
     --white-color: #FFFFFF;     
     --gray-color: #808080;     
     --black-color: #000000;   

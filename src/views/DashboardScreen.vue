@@ -14,28 +14,34 @@
     <main class="main-content">
       <header class="header">
         <div class="user-info">
-          <span>Olá, <strong>Gabriel</strong></span>
+          <div class="user-info-01">
+            <span>Olá,</span><span><strong>Gabriel</strong></span>
+          </div>
           <div class="user-icon">👤</div>
         </div>
       </header>
 
+      <div class="resumo">
+        <h2>Resumo dos pedidos</h2>
+      </div>
+
       <section class="summary">
         <div class="summary-card">
-          <span class="icon">📄</span>
+          <span class="icon1">📄</span>
           <div>
             <h3>{{ dashboard.totalOrders }} Pedidos</h3>
             <p>R$ {{ formatCurrency(dashboard.totalAmount) }}</p>
           </div>
         </div>
         <div class="summary-card">
-          <span class="icon">💰</span>
+          <span class="icon2">💰</span>
           <div>
             <h3>{{ dashboard.totalSales }} Vendas</h3>
             <p>R$ {{ formatCurrency(dashboard.totalSalesAmount) }}</p>
           </div>
         </div>
         <div class="summary-card">
-          <span class="icon">📊</span>
+          <span class="icon3">📊</span>
           <div>
             <h3>Ticket médio</h3>
             <p>R$ {{ formatCurrency(dashboard.averageTicket) }}</p>
@@ -143,40 +149,85 @@ export default {
 }
 
 .main-content {
+  background-color: #f4f4f4;
   flex: 1;
-  background-color: var(--white-color);
-  padding: 20px;
+  padding: 0;
   box-sizing: border-box;
-}
 
+}
+.user-info{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+}
+.user-icon{
+   border: 2px solid var(--primary-color);
+   background-color: var(--primary-color);
+   padding: 10px;
+   border-radius: 50%;
+}
+.user-info-01{
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  margin-right: 10px;
+}
 .header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 10px;
+  background-color: var(--white-color);
+  margin-left: 5px;
 }
-
+.resumo{
+  padding: 10px 20px;
+}
 .summary {
   display: flex;
-  gap: 20px;
-  margin-bottom: 20px;
+  align-items: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 130px;
 }
 
 .summary-card {
-  flex: 1;
-  padding: 20px;
+  padding: 25px;
   background: var(--white-color);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   min-width: 250px;
 }
-
+.summary-card .icon1{
+   border: 2px solid var(--secondary-color);
+   background-color: var(--secondary-color);
+   padding: 20px;
+   border-radius: 50%;
+   margin-bottom: 15px;
+}
+.summary-card .icon2{
+   border: 2px solid var(--tertinary-color);
+   background-color: var(--tertinary-color);
+   padding: 20px;
+   border-radius: 50%;
+   margin-bottom: 15px;
+}
+.summary-card .icon3{
+   border: 2px solid var(--quaternay-color);
+   background-color: var(--quaternay-color);
+   padding: 20px;
+   border-radius: 50%;
+   margin-bottom: 15px;
+}
+.summary-card h3{
+  margin-top: 25px;
+}
 .orders table {
-  width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin: 20px 20px 20px 20px;
+  background-color: var(--white-color);
 }
 
 .orders th, .orders td {
@@ -187,6 +238,7 @@ export default {
 .orders th {
   background-color: var(--primary-color);
   color: var(--white-color);
+  text-align: start;
 }
 
 /* Media Queries */
@@ -199,6 +251,7 @@ export default {
     width: 100%;
     padding: 10px;
     position: relative;
+    display: none;
   }
 
   .btn-sidebar {
@@ -206,7 +259,7 @@ export default {
   }
 
   .summary {
-    flex-direction: column;
+    display: flex;
     gap: 15px;
   }
 
@@ -229,6 +282,10 @@ export default {
 
   .main-content {
     padding: 15px;
+  }
+  .summary {
+    display: flex;
+    gap: 15px;
   }
 
   .summary-card {
@@ -256,6 +313,9 @@ export default {
     padding: 10px;
   }
 
+  .summary{
+    display: flex;
+  }
   .summary-card {
     padding: 10px;
     min-width: 100%;
