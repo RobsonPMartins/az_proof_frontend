@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Cores Personalizadas */
+    --primary-color: #FE7C6E;   
+    --white-color: #FFFFFF;     
+    --gray-color: #808080;     
+    --black-color: #000000;   
+}
