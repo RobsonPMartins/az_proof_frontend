@@ -11,7 +11,25 @@
           </div>
           <div class="form-group">
             <label for="password">Senha</label>
-            <input type="password" id="password" v-model="password" required>
+            <div class="input-wrapper">
+              <input :type="passwordVisible ? 'text' : 'password'" id="password" v-model="password" placeholder="senha" required>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="eye-icon"
+                @click="togglePassword"
+              >
+                <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </div>
           </div>
           <div class="forgot-password">Esqueci a senha</div>
           <button type="submit" class="btn" :disabled="loading">Entrar</button>
@@ -37,6 +55,7 @@ export default {
     return {
       email: '',
       password: '',
+      passwordVisible: false,
       errorMessage: '',
       loading: false,
     };
@@ -60,10 +79,12 @@ export default {
 
       this.loading = false;
     },
+    togglePassword() {
+      this.passwordVisible = !this.passwordVisible;
+    }
   },
 };
 </script>
-
 
 <style scoped>
 .container {
@@ -103,18 +124,31 @@ export default {
   margin-bottom: 15px;
 }
 
-label {
-  display: block;
-  font-size: 14px;
-  color: var(--black-color);
-  margin-bottom: 5px;
+/* Estilização do input-wrapper */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 input {
   width: 100%;
   padding: 10px;
-  border: 1px solid var(--gray-color);
+  padding-right: 40px; /* Espaço pro ícone */
+  border: 1px solid var(--gray-color1);
   border-radius: 5px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #666;
+  transition: 0.3s;
+}
+
+.eye-icon:hover {
+  color: #000;
 }
 
 .forgot-password {
