@@ -1,4 +1,5 @@
 # Az Proof Frontend
+![Tela Login](src/assets/az-suite-login.png)
 
 Este é o frontend do desafio técnico da Azape, desenvolvido com Vue.js.
 
